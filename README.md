@@ -19,8 +19,22 @@ Each service consists of:
 
 ### user-auth-service
 
-Service to store systems' users. Exposing following endpoints:
-- `/users/login` - to receive JWT to be authenticated to work with other services. Token is valid for 10 mins. The endpoint does not require to be authenticated.
-- `/users/register` - to register users. Requires authentication before.
-- `/users` - returns all registered users users. Requires increased priviliges. 
-- `/users/{id}`- for updating particular user. Requires increased priviliges.
+Service to store systems' users. Exposes following endpoints:
+- `POST` `/users/login` - to receive JWT to be authenticated to work with other services. Token is valid for 10 mins. The endpoint does not require to be authenticated.
+- `POST` `/users/register` - to register users. Requires authentication before.
+- `GET` `/users` - returns all registered users users. Requires increased priviliges. 
+- `PUT` `/users/{id}`- for updating particular user. Requires increased priviliges.
+
+### mail-service
+
+Service responsible for user notification/communication. Exposes following endpoints:
+- `POST` `/api/mails` - to send an e-mail. 
+- `GET` `/api/mails` - to get all mails.
+
+Usage of the service requires:
+- for other application - Basic Auth 
+- for users - JWT
+
+*`send email` - save at local machine in home directory, folder `mails` 
+
+
