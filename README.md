@@ -35,7 +35,9 @@ Usage of the service requires:
 - for other application - Basic Auth 
 - for users - JWT
 
-*`send email` - save at local machine in home directory, folder e.g. `~/user/Desktop/Mails`. Naming's: `<day>-<month>-<year><hour><minute><second>-<receiver>.txt`.
+*`send email` - save at local machine in home directory, folder e.g. `~/user/Desktop/Mails`.
+Naming's: `<day>-<month>-<year><hour><minute><second>-<receiver>.txt`.
+
 Content of example mail:
 ```console
 
