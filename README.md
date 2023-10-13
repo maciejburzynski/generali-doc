@@ -52,4 +52,7 @@ Generali's Mail Service :)
 
 ```
 
+Todo:
+- Zamodeluj dane w order-service używając klasy abstrakcyjnej Product
+- Dziedzicz po klasie Product następujące klasy: Laptop, Monitor
 
