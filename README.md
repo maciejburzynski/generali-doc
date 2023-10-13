@@ -14,7 +14,7 @@ Each service consists of:
 - Swagger UI
 
 <p align="center">
-    <img src="Generali-diagram.drawio" >
+    <img src="/Generali-diagram.drawio" >
 </p>
 
 ### user-auth-service
