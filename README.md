@@ -3,6 +3,7 @@
 ### Services 
 - [user-auth-service](https://github.com/maciejburzynski/generali-user-auth-service)
 - [mail-service](https://github.com/maciejburzynski/generali-mail-service)
+- [order-service](https://github.com/maciejburzynski/generali-order-service)
 
 Each service consists of:
 - Exposed Rest API
@@ -27,21 +28,19 @@ Service to store systems' users. Exposes following endpoints:
 
 #### User registration process 
 
-- To register new User, send `POST` request on `/users/register` endpoint. In body there should be `username` and `password` fields. 
-- Newly registered User is inactive as flags: `isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled` are set to false.
+- To register new user, send `POST` request on `/users/register` endpoint. In body there should be `username` and `password` fields. 
+- Newly registered user is inactive as flags: `isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled` are set to false.
 - Activation link is sent via [mail-service](https://github.com/maciejburzynski/generali-mail-service)
 - Once link is clicked, appropriate GET method is executed which is responsible for user activation.
-- If all fine - User is activated then all flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true.
+- If all fine - user is activated then all flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true.
 
-- Pattern for Activation link is following: `baseUrl` `/users/<user-uuid>=<true/false>`. This link can be user for user activation as well as user blocking/inactivation.
+- Pattern for Activation link is following: `<baseUrl>/users/<user-uuid>=<true/false>`. This link can be either user for user activation as well as user deactivation or reactivation.
 
 #### User login process
 
-- To login new User, send `POST` on `/users/login` endpoint is required. In body there should be `username` and `password` fields.
-- If user exists, flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true, token to authenticate is returned in response.
+- To login user, send `POST` on `/users/login` endpoint is required. In body there should be `username` and `password` fields.
+- If user exists, credentials are correct, flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true, JWT to authenticate is returned in response.
 - If username/password is not correct, user doesn't exist or is inactive - appropriate message is returned to the client, based on thrown `Exception` or validation performed.
-
-
 
 ## mail-service
 
