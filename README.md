@@ -17,7 +17,7 @@ Each service consists of:
     <img src="/Generali-diagram.drawio.png" >
 </p>
 
-### user-auth-service
+## user-auth-service
 
 Service to store systems' users. Exposes following endpoints:
 - `POST` `/users/login` - to receive JWT to be authenticated to work with other services. Token is valid for 10 mins. The endpoint does not require to be authenticated.
@@ -27,7 +27,7 @@ Service to store systems' users. Exposes following endpoints:
 
 #### User registration process 
 
-- To register new User, send `POST` on `/users/register` endpoint is required. In body there should be `username` and `password` fields. 
+- To register new User, send `POST` request on `/users/register` endpoint. In body there should be `username` and `password` fields. 
 - Newly registered User is inactive as flags: `isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled` are set to false.
 - Activation link is sent via [mail-service](https://github.com/maciejburzynski/generali-mail-service)
 - Once link is clicked, appropriate GET method is executed which is responsible for user activation.
@@ -35,7 +35,15 @@ Service to store systems' users. Exposes following endpoints:
 
 - Pattern for Activation link is following: `baseUrl` `/users/<user-uuid>=<true/false>`. This link can be user for user activation as well as user blocking/inactivation.
 
-### mail-service
+#### User login process
+
+- To login new User, send `POST` on `/users/login` endpoint is required. In body there should be `username` and `password` fields.
+- If user exists, flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true, token to authenticate is returned in response.
+- If username/password is not correct, user doesn't exist or is inactive - appropriate message is returned to the client, based on thrown `Exception` or validation performed.
+
+
+
+## mail-service
 
 Service responsible for user notification/communication. Exposes following endpoints:
 - `POST` `/api/mails` - to send an e-mail. 
