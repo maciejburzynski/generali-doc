@@ -37,7 +37,7 @@ Usage of the service requires:
 
 *`send email` - save at local machine in home directory, folder e.g. `~/user/Desktop/Mails`.
 
-Mail naming convention: `<day>-<month>-<year><hour><minute><second>-<receiver>.txt`.
+Mail naming convention: `<day>-<month>-<year><hour><minute><second><miliseconds>-<endoded-in-base64-receiver(s)>.txt`.
 
 Content of example mail:
 ```console
