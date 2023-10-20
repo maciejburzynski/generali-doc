@@ -70,6 +70,7 @@ Generali's Mail Service :)
 ```
 
 Todo:
-- Zamodeluj dane w order-service używając klasy abstrakcyjnej Product
-- Dziedzicz po klasie Product następujące klasy: Laptop, Monitor
+- Stwórz pole w encji User - activationUuid służące do aktywacji 
+użytkownika. Przekaż je do maila oraz controllera odpowiedzialnego za 
+aktywacje 
 
