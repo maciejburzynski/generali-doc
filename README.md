@@ -70,7 +70,5 @@ Generali's Mail Service :)
 ```
 
 Todo:
-- Stwórz pole w encji User - activationUuid służące do aktywacji 
-użytkownika. Przekaż je do maila oraz controllera odpowiedzialnego za 
-aktywacje 
-
+- Stwórz Job do czyszczenia danych. Za pomocą adnotacji @Scheduled stwórz metodę, która czyści dane - 
+maile, które zostały zapisane tydzień/dzień/godzinę temu. Job uruchamiaj raz dziennie o godzinie 2:00. 
