@@ -1,5 +1,27 @@
 ## Documentation for Generali SpringPL1 training
 
+### Table of contents 
+- [Multiple Flyways](https://github.com/maciejburzynski/generali-mail-service/tree/master/src/main/java/com/generali/mailservice/flyway)
+- [Spring Data JPA](https://github.com/maciejburzynski/generali-mail-service/blob/master/src/main/java/com/generali/mailservice/mail/Mail.java)
+- [Spring Data JDBC](https://github.com/maciejburzynski/generali-attachment-service/tree/main/attachment-service/src/main/java/com/generali/attachmentservice)
+- [Multiple data sources](https://github.com/maciejburzynski/generali-mail-service/tree/master/src/main/java/com/generali/mailservice/multipledatasources)
+- [Active-MQ / JMS publisher](https://github.com/maciejburzynski/generali-order-service/tree/main/Spring_2/src/main/java/pl/generali/Spring/activemq)
+- [Active-MQ / JMS consumer](https://github.com/maciejburzynski/generali-attachment-service/tree/main/attachment-service/src/main/java/com/generali/attachmentservice/activemq)
+- [Batch jobs - @Scheduled](https://github.com/maciejburzynski/generali-mail-service/blob/master/src/main/java/com/generali/mailservice/mail/MailScheduler.java)
+- [Api Consuming](https://github.com/maciejburzynski/generali-order-service/tree/main/Spring_2/src/main/java/pl/generali/Spring/apiconsuming)
+- [Api Exposure](https://github.com/maciejburzynski/generali-order-service/blob/main/Spring_2/src/main/java/pl/generali/Spring/order/product/laptop/LaptopRestController.java)
+- [Rest Clients](https://github.com/maciejburzynski/generali-user-auth-service/tree/master/src/main/java/com/generali/userauthservice/restclients)
+- [JWT](https://github.com/maciejburzynski/generali-user-auth-service/tree/master/src/main/java/com/generali/userauthservice/jwt)
+- [User Entity (roles, authorities)](https://github.com/maciejburzynski/generali-user-auth-service/tree/master/src/main/java/com/generali/userauthservice/user)
+- [Basic Spring User](https://github.com/maciejburzynski/generali-order-service) - Readme
+- [Optimistic locking](https://github.com/maciejburzynski/generali-attachment-service)
+- [Specification](https://github.com/maciejburzynski/generali-user-auth-service/tree/master/src/main/java/com/generali/userauthservice/user/jpaspecification)
+- [Global Exception Handler](https://github.com/maciejburzynski/generali-attachment-service)
+- [XML to Java Conversion / Jaxb](https://github.com/maciejburzynski/generali-user-auth-service/tree/master/src/main/java/com/generali/userauthservice/user/xml)
+- [Dto validator/ Hibernate validator](https://github.com/maciejburzynski/generali-user-auth-service/blob/master/src/main/java/com/generali/userauthservice/user/UserDto.java)
+- [Pagination + Path variable + Request param](https://github.com/maciejburzynski/generali-order-service/blob/main/Spring_2/src/main/java/pl/generali/Spring/order/product/laptop/LaptopRestController.java)
+- [Swagger](https://github.com/maciejburzynski/generali-mail-service/tree/master/src/main/java/com/generali/mailservice/swagger)
+
 ### Services 
 - [user-auth-service](https://github.com/maciejburzynski/generali-user-auth-service)
 - [mail-service](https://github.com/maciejburzynski/generali-mail-service)
@@ -80,28 +102,5 @@ Service responsible for order processing. Exposes lots of endpoints. The most fu
 Service responsible for attachment processing. Exposes 2 endpoints:
 - `POST` `/api/attachments` - to add attachment. 
 - `GET` `/api/attachments` - to get all attachments.
-
-### Table of contents 
-- [Multiple flyways](https://github.com/maciejburzynski/generali-attachment-service)
-- [Spring Data JPA](https://github.com/maciejburzynski/generali-attachment-service)
-- [Spring Data JDBC](https://github.com/maciejburzynski/generali-attachment-service)
-- [Multiple data sources](https://github.com/maciejburzynski/generali-attachment-service)
-- [Active-MQ / JMS publisher](https://github.com/maciejburzynski/generali-attachment-service)
-- [Active-MQ / JMS subscriber](https://github.com/maciejburzynski/generali-attachment-service)
-- [Batch jobs - @Scheduled](https://github.com/maciejburzynski/generali-attachment-service)
-- [Api Consuming](https://github.com/maciejburzynski/generali-attachment-service)
-- [Api Exposure](https://github.com/maciejburzynski/generali-attachment-service)
-- [Rest Clients](https://github.com/maciejburzynski/generali-attachment-service)
-- [JWT](https://github.com/maciejburzynski/generali-attachment-service)
-- [Basic auth](https://github.com/maciejburzynski/generali-attachment-service)
-- [User Entity (roles, authorities)](https://github.com/maciejburzynski/generali-attachment-service)
-- [Basic Spring User](https://github.com/maciejburzynski/generali-attachment-service)
-- [Optimistic locking](https://github.com/maciejburzynski/generali-attachment-service)
-- [Specification](https://github.com/maciejburzynski/generali-attachment-service)
-- [Global Exception Handler](https://github.com/maciejburzynski/generali-attachment-service)
-- [XML to Java Conversion / Jaxb](https://github.com/maciejburzynski/generali-attachment-service)
-- [Api Consuming](https://github.com/maciejburzynski/generali-attachment-service)
-- [Dto validator/ Hibernate validator](https://github.com/maciejburzynski/generali-attachment-service)
-- [Pagination + Path variable + Request param](https://github.com/maciejburzynski/generali-attachment-service)
 
 
