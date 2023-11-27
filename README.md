@@ -4,12 +4,13 @@
 - [user-auth-service](https://github.com/maciejburzynski/generali-user-auth-service)
 - [mail-service](https://github.com/maciejburzynski/generali-mail-service)
 - [order-service](https://github.com/maciejburzynski/generali-order-service)
+- [attachment-service](https://github.com/maciejburzynski/generali-attachment-service)
 
 Each service consists of:
 - Exposed Rest API
 - Database: H2
 - Spring Security (with JWT/Basic authorization)
-- Spring Data JPA
+- Spring Data JPA/ Spring Data JDBC
 - Hibernate Validator 
 - Flyway 
 - Swagger UI
@@ -34,8 +35,8 @@ Service to store systems' users. Exposes following endpoints:
 - Once link is clicked, appropriate GET method is executed which is responsible for user activation.
 - If all fine - user is activated then all flags(`isAccountNonExpired`, `isAccountNonLocked`, `isCredentialsNonExpired`, `isEnabled`) are set to true.
 
-- Pattern for Activation link is following: `<baseUrl>/users/<user-uuid>=<true/false>`. This link can be either user for user activation as well as user deactivation or reactivation.
-
+- Pattern for Activation link is following: `<baseUrl>/users/<user-uuid>`. This link is used for user activation.
+  
 #### User login process
 
 - To login user, send `POST` on `/users/login` endpoint is required. In body there should be `username` and `password` fields.
@@ -68,7 +69,17 @@ Best Regards,
 Generali's Mail Service :)
 
 ```
+## order-service 
 
-Todo:
-- Stwórz Job do czyszczenia danych. Za pomocą adnotacji @Scheduled stwórz metodę, która czyści dane - 
-maile, które zostały zapisane tydzień/dzień/godzinę temu. Job uruchamiaj raz dziennie o godzinie 2:00. 
+Service responsible for order processing. Exposes lots of endpoints. The most functional ones are:
+- `POST` `/api/orders` - to add order. 
+- `GET` `/api/orders` - to get all orders.
+  
+## attachment-service
+
+Service responsible for attachment processing. Exposes 2 endpoints:
+- `POST` `/api/attachments` - to add attachment. 
+- `GET` `/api/attachments` - to get all attachments.
+  
+
+
